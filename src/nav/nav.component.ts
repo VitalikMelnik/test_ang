@@ -1,18 +1,25 @@
 
 class NavController {
 
-    public isCollapsed: boolean = true;
+    public isCollapsed: boolean = false;
 
+    public ModalController (){
+        this.isCollapsed = !this.isCollapsed;
+    }
 
 }
+
+
 
 export const NavComponent = {
     controller: NavController,
     controllerAs: 'vm',
     template: `
-        <nav>
+<div> 
+<div ng-click="vm.ModalController()">open</div>
+        <nav ng-class="{navigation_menu_root : true , menu__open : vm.isCollapsed }">
             <div>
-                <ul >
+                <ul ng-click="vm.ModalController()">
                     <li ng-class="{active:vm.$state.includes('home')}">
                         <a ui-sref="home">Home</a>
                     </li>
@@ -21,5 +28,7 @@ export const NavComponent = {
                     </li>
                 </ul>
            </div>
-     </nav>`
+     </nav>
+</div>
+`
 };
