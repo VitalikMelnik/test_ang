@@ -1,5 +1,55 @@
-body{
-  background-color: aqua;
+//initialization variables
+$break-large: 600px;
+$border-radius: 80px 0 80px 0;
+$body-bg-color: rgba(96, 255, 86, 0.16);
+$btn-color: #4CAF50;
+$modal-bg-color: rgba(255, 248, 0, 0.75);
+$err-color: rgba(255, 65, 75, 0.71);
+$box-shadow: 0px 0px 258px -40px rgba(0, 0, 0, 0.43);
+$li-bg-color-even: rgba(21, 255, 40, 0.5);
+$li-bg-color-odd: rgba(255, 244, 0, 0.62);
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
-@import './_navigation';
+body {
+  background-color: $body-bg-color;
+  .root_header {
+    position: fixed;
+    z-index: 98;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: $box-shadow;
+    font-family: 'Roboto', sans-serif;
+    color: $btn-color;
+    text-align: center;
+    font-size: 20px;
+    padding: 25px;
+
+    h2 {
+      width: calc(100% - 50px);
+    }
+  }
+}
+
+@media screen and (max-width: $break-large) {
+  body {
+    .root_header {
+      padding-bottom: 80px;
+    }
+  }
+}
+
+//import static styles
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import "./_mixins";
+@import "./_input_style";
+
+// import component styles
+@import './_navigation_component';
+@import './_list_component';
+@import "./_home_component";
+@import "./_add_component";

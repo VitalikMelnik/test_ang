@@ -1,0 +1,36 @@
+.home_component_root {
+  @include center_board();
+  img {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all linear 0.3s;
+
+    &:hover {
+      transform: translateX(-50%) scale(1.1);
+      border: 2px solid black;
+    }
+  }
+  h1 {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    text-align: center;
+    margin: 30px 0;
+    animation: text_move 4s infinite;
+  }
+
+  @keyframes text_move {
+    from {
+      transform: scale(1.0);
+    }
+    50%{
+      transform: scale(1.1);
+    }
+    to {
+      transform: scale(1.0);
+    }
+  }
+}

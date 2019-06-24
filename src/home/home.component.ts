@@ -1,16 +1,15 @@
 /// <reference path="../../typings/index.d.ts"/>
-import * as sharkBar from '../images/sharkbar.jpg';
-
+import * as sharkBar from '../images/logo.jpg';
 export const HomeComponent: angular.IComponentOptions = {
     template: `
-    <h1>Home Component</h1>
-    <img src="{{$ctrl.imageData}}">
+    <div class="home_component_root">
+        <h1>Test app by Vitalii Melnyk</h1>
+        <img alt="home logo" src="{{$ctrl.imageData}}">
+    </div>
     `,
     controller: class HomeComponent {
-        constructor(){
-
-        }
         imageData: any;
+
         $onInit() {
             this.imageData = sharkBar;
         }

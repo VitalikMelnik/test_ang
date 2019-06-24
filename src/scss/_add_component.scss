@@ -1,0 +1,56 @@
+.add_component_root {
+  @include center_board();
+
+  .add_component_btn__add {
+    @include btn();
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 130px;
+  }
+
+  .input__text {
+    width: 280px;
+    left: 50%;
+    top: 25%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  .add_component__err{
+    position: absolute;
+    width: 280px;
+    text-align: center;
+    left: 50%;
+    top: 45%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    color: $err-color;
+  }
+
+  .add_component_modal{
+    position: absolute;
+    z-index: 95;
+    width: 100%;
+    height: 0;
+    background-color: $modal-bg-color;
+    border-radius: $border-radius;
+    display: none;
+    opacity: 0;
+    transition: all linear 0.3s;
+    p{
+      font-family: 'Roboto', sans-serif;
+      font-size: 30px;
+      color: $btn-color;
+      width: 100%;
+      position: absolute;
+      margin-top: 50px;
+      text-align: center;
+    }
+  }
+  .add_component_modal__open{
+    display: block;
+    opacity: 1;
+    height: 100%;
+  }
+}

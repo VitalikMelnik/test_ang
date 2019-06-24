@@ -1,0 +1,108 @@
+.nav_component_root {
+  position: fixed;
+  z-index: 99;
+  .navigation_burger {
+    border: 0;
+    padding: 0;
+    margin: 30px;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    width: 2.5rem;
+    .burger__line {
+      height: 0.25rem;
+      background-color: #000;
+      transition: transform 0.3s, opacity 0.2s;
+
+      &:nth-child(2) {
+        &::after {
+          height: 0.25rem;
+          background-color: #000;
+          transition: transform 0.3s, opacity 0.2s;
+          content: "";
+          display: block;
+          width: 100%;
+        }
+      }
+
+      + .burger__line {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+  .navigation_burger__active {
+    .burger__line {
+      &:nth-of-type(1) {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+
+      &:nth-child(3) {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+
+      &:nth-child(2) {
+        transform: rotate(45deg);
+
+        &::after {
+          transform: rotate(-90deg);
+        }
+      }
+    }
+  }
+  .navigation_menu_root {
+    position: fixed;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    transform: translateX(-600px);
+    transition: all linear 0.3s;
+    ul{
+      position: relative;
+      width: 100%;
+      height: auto;
+      li{
+        position: relative;
+        width: 100% !important;
+        height: 50px;
+        margin-top: 5px;
+        a {
+          display: block;
+          text-align: center;
+          width: 100%;
+          padding: 10px 0;
+          font-family: 'Roboto', sans-serif;
+          font-size: 20px;
+          text-decoration: none;
+          color: $btn-color;
+          transition: all linear 0.3s;
+
+          &:hover {
+            background-color: $btn-color;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+  .menu__open {
+    transform: translateX(0);
+  }
+}
+
+@media screen and (max-width: $break-large) {
+  .nav_component_root{
+    .navigation_burger{
+      margin-top: 130px;
+      z-index: 99;
+      position: absolute;
+    }
+    .navigation_menu_root{
+      width: 100%;
+      margin-top: 110px;
+    }
+  }
+}
+

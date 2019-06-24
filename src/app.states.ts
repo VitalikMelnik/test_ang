@@ -6,8 +6,14 @@ export const homeState: Ng1StateDeclaration = {
   component: 'appHome'
 };
 
-export const aboutState = {
-  name: 'about',
-  url: '/about',
-  component: 'appAbout'
+export const listState = {
+  name: 'list',
+  url: '/list',
+  component: 'appList'
+};
+
+export const addState = {
+  name: 'add',
+  url: '/add',
+  component: 'appAdd'
 };
