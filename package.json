@@ -12,7 +12,7 @@
   "dependencies": {
     "@types/angular-ui-bootstrap": "^0.13.46",
     "@uirouter/angularjs": "^1.0.15",
-    "angular": "^1.6.9",
+    "angular": "^1.8.3",
     "angular-sanitize": "^1.6.9",
     "html-webpack-plugin": "^3.1.0",
     "webpack": "^4.29.0",
